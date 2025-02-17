@@ -69,7 +69,7 @@
     "license": "MIT",
     "main": "build/es5/bundle.js",
     "module": "build/es2019/module.js",
-    "name": "extendable-media-recorder-wav-encoder-worker",
+    "name": "extendable-media-recorder-wav-32-fp-encoder-worker",
     "repository": {
         "type": "git",
         "url": "https://github.com/MattiasEh/extendable-media-recorder-wav-32-fp-encoder-worker.git"
