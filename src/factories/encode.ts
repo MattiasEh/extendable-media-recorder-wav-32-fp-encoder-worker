@@ -2,8 +2,8 @@ import { TEncodeFactory } from '../types';
 
 export const createEncode: TEncodeFactory = (computeNumberOfSamples, encodeHeader) => {
     return (channelDataArrays, part, bitRate, sampleRate) => {
-        const bytesPerSample = bitRate >> 3; // tslint:disable-line:no-bitwise
-        const headerSize = part === 'subsequent' ? 0 : 44;
+        const bytesPerSample = 4; // 32-bit floating point wave file
+        const headerSize = part === 'subsequent' ? 0 : 46;
         const numberOfChannels = channelDataArrays.length;
         const numberOfSamples = computeNumberOfSamples(channelDataArrays[0]);
         const arrayBuffer = new ArrayBuffer(numberOfSamples * numberOfChannels * bytesPerSample + headerSize);
@@ -22,7 +22,7 @@ export const createEncode: TEncodeFactory = (computeNumberOfSamples, encodeHeade
                 for (let i = 0; i < length; i += 1) {
                     const value = channelDataArray[i];
 
-                    dataView.setInt16(offset, value < 0 ? Math.max(-1, value) * 32768 : Math.min(1, value) * 32767, true);
+                    dataView.setFloat32(offset, value, true);
 
                     offset += numberOfChannels * bytesPerSample;
                 }
