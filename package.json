@@ -1,7 +1,7 @@
 {
-    "author": "Christoph Guttandin",
+    "author": "Mattias Andersson",
     "bugs": {
-        "url": "https://github.com/chrisguttandin/extendable-media-recorder-wav-encoder-worker/issues"
+        "url": "https://github.com/MattiasEh/extendable-media-recorder-wav-32-fp-encoder-worker/issues"
     },
     "config": {
         "commitizen": {
@@ -13,7 +13,7 @@
         "tslib": "^2.8.1",
         "worker-factory": "^7.0.36"
     },
-    "description": "The worker which is used by the extendable-media-recorder-wav-encoder package.",
+    "description": "The worker which is used by the extendable-media-recorder-wav-32-fp-encoder package.",
     "devDependencies": {
         "@babel/core": "^7.26.0",
         "@babel/plugin-external-helpers": "^7.25.9",
@@ -65,14 +65,14 @@
         "build/es5/",
         "src/"
     ],
-    "homepage": "https://github.com/chrisguttandin/extendable-media-recorder-wav-encoder-worker",
+    "homepage": "https://github.com/MattiasEh/extendable-media-recorder-wav-32-fp-encoder-worker",
     "license": "MIT",
     "main": "build/es5/bundle.js",
     "module": "build/es2019/module.js",
     "name": "extendable-media-recorder-wav-encoder-worker",
     "repository": {
         "type": "git",
-        "url": "https://github.com/chrisguttandin/extendable-media-recorder-wav-encoder-worker.git"
+        "url": "https://github.com/MattiasEh/extendable-media-recorder-wav-32-fp-encoder-worker.git"
     },
     "scripts": {
         "build": "rimraf build/* && tsc --project src/tsconfig.json && node config/esbuild/macros.mjs && rimraf build/es2019/**/*.macro.* && rollup --config config/rollup/bundle.mjs",
